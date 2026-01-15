@@ -61,26 +61,34 @@ document.addEventListener('DOMContentLoaded', function () {
   }, { passive: true });
 
   // Background Visualization - Interactive Particle Network
-  const initBackground = () => {
-    const container = document.getElementById('kaszinok');
+  const createParticleBackground = (container) => {
     if (!container) return;
 
+    // Check if canvas already exists
+    if (container.querySelector('.bg-canvas')) return;
+
     // Ensure container is relative
-    container.style.position = 'relative';
-    container.style.overflow = 'hidden'; // Ensure particles don't overflow
-    container.style.zIndex = '1';
+    const computedStyle = window.getComputedStyle(container);
+    if (computedStyle.position === 'static') {
+      container.style.position = 'relative';
+    }
+    // Only force overflow hidden if verified safe, but usually good for particles
+    // container.style.overflow = 'hidden'; 
+    if (computedStyle.zIndex === 'auto') {
+      container.style.zIndex = '1';
+    }
 
     // Create canvas
     const canvas = document.createElement('canvas');
-    canvas.id = 'bg-canvas';
+    canvas.classList.add('bg-canvas');
     canvas.style.position = 'absolute';
     canvas.style.top = '0';
     canvas.style.left = '0';
     canvas.style.width = '100%';
     canvas.style.height = '100%';
-    canvas.style.zIndex = '-1'; // Behind content
+    canvas.style.zIndex = '-1';
     canvas.style.opacity = '0.6';
-    canvas.style.pointerEvents = 'none'; // Click-through
+    canvas.style.pointerEvents = 'none';
     container.prepend(canvas);
 
     const ctx = canvas.getContext('2d');
@@ -88,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let particles = [];
 
     // Configuration
-    const particleCount = window.innerWidth < 768 ? 20 : 40; // Less dense for section
+    const particleCount = window.innerWidth < 768 ? 20 : 40;
     const connectionDistance = 120;
     const mouseDistance = 150;
 
@@ -104,7 +112,7 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('resize', resize);
     resize();
 
-    // Mouse move handler (relative to container)
+    // Mouse move handler
     container.addEventListener('mousemove', (e) => {
       const rect = container.getBoundingClientRect();
       mouse.x = e.clientX - rect.left;
@@ -180,6 +188,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Animation
     const animate = () => {
+      if (!document.body.contains(canvas)) return;
+
       ctx.clearRect(0, 0, width, height);
 
       particles.forEach(particle => {
@@ -212,8 +222,17 @@ document.addEventListener('DOMContentLoaded', function () {
     animate();
   };
 
-  // Call the background visualization function
-  initBackground();
+  // Initialize backgrounds for elements with class 'particle-bg'
+  document.querySelectorAll('.particle-bg').forEach(el => {
+    createParticleBackground(el);
+  });
+
+  // Backward compatibility / explicit calls if needed
+  const kaszinok = document.getElementById('kaszinok');
+  if (kaszinok) createParticleBackground(kaszinok);
+
+  const cikkek = document.getElementById('cikkek');
+  if (cikkek) createParticleBackground(cikkek);
 
   // Animate elements on scroll
   const observerOptions = {
