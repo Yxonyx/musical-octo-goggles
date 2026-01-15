@@ -60,6 +60,161 @@ document.addEventListener('DOMContentLoaded', function () {
     lastScroll = currentScroll;
   }, { passive: true });
 
+  // Background Visualization - Interactive Particle Network
+  const initBackground = () => {
+    const container = document.getElementById('kaszinok');
+    if (!container) return;
+
+    // Ensure container is relative
+    container.style.position = 'relative';
+    container.style.overflow = 'hidden'; // Ensure particles don't overflow
+    container.style.zIndex = '1';
+
+    // Create canvas
+    const canvas = document.createElement('canvas');
+    canvas.id = 'bg-canvas';
+    canvas.style.position = 'absolute';
+    canvas.style.top = '0';
+    canvas.style.left = '0';
+    canvas.style.width = '100%';
+    canvas.style.height = '100%';
+    canvas.style.zIndex = '-1'; // Behind content
+    canvas.style.opacity = '0.6';
+    canvas.style.pointerEvents = 'none'; // Click-through
+    container.prepend(canvas);
+
+    const ctx = canvas.getContext('2d');
+    let width, height;
+    let particles = [];
+
+    // Configuration
+    const particleCount = window.innerWidth < 768 ? 20 : 40; // Less dense for section
+    const connectionDistance = 120;
+    const mouseDistance = 150;
+
+    // Mouse state
+    const mouse = { x: null, y: null };
+
+    // Resize handler
+    const resize = () => {
+      width = canvas.width = container.offsetWidth;
+      height = canvas.height = container.offsetHeight;
+    };
+
+    window.addEventListener('resize', resize);
+    resize();
+
+    // Mouse move handler (relative to container)
+    container.addEventListener('mousemove', (e) => {
+      const rect = container.getBoundingClientRect();
+      mouse.x = e.clientX - rect.left;
+      mouse.y = e.clientY - rect.top;
+    });
+
+    // Mouse leave handler
+    container.addEventListener('mouseleave', () => {
+      mouse.x = null;
+      mouse.y = null;
+    });
+
+    // Particle class
+    class Particle {
+      constructor() {
+        this.x = Math.random() * width;
+        this.y = Math.random() * height;
+        this.vx = (Math.random() - 0.5) * 0.3;
+        this.vy = (Math.random() - 0.5) * 0.3;
+        this.size = Math.random() * 2 + 1;
+        this.color = '#39FF14'; // Neon green
+      }
+
+      update() {
+        this.x += this.vx;
+        this.y += this.vy;
+
+        // Bounce
+        if (this.x < 0 || this.x > width) this.vx *= -1;
+        if (this.y < 0 || this.y > height) this.vy *= -1;
+
+        // Mouse interaction
+        if (mouse.x != null) {
+          const dx = mouse.x - this.x;
+          const dy = mouse.y - this.y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+
+          if (distance < mouseDistance) {
+            const forceDirectionX = dx / distance;
+            const forceDirectionY = dy / distance;
+            const force = (mouseDistance - distance) / mouseDistance;
+
+            // Attract but swirl
+            const directionX = forceDirectionX * force * 0.5;
+            const directionY = forceDirectionY * force * 0.5;
+
+            this.vx += directionX;
+            this.vy += directionY;
+
+            // Limit speed
+            const maxSpeed = 2;
+            const speed = Math.sqrt(this.vx * this.vx + this.vy * this.vy);
+            if (speed > maxSpeed) {
+              this.vx = (this.vx / speed) * maxSpeed;
+              this.vy = (this.vy / speed) * maxSpeed;
+            }
+          }
+        }
+      }
+
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fillStyle = this.color;
+        ctx.fill();
+      }
+    }
+
+    // Init
+    for (let i = 0; i < particleCount; i++) {
+      particles.push(new Particle());
+    }
+
+    // Animation
+    const animate = () => {
+      ctx.clearRect(0, 0, width, height);
+
+      particles.forEach(particle => {
+        particle.update();
+        particle.draw();
+      });
+
+      // Connections
+      for (let a = 0; a < particles.length; a++) {
+        for (let b = a; b < particles.length; b++) {
+          const dx = particles[a].x - particles[b].x;
+          const dy = particles[a].y - particles[b].y;
+          const distance = dx * dx + dy * dy;
+
+          if (distance < connectionDistance * connectionDistance) {
+            const opacity = 1 - (distance / (connectionDistance * connectionDistance));
+            ctx.strokeStyle = `rgba(57, 255, 20, ${opacity * 0.1})`;
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(particles[a].x, particles[a].y);
+            ctx.lineTo(particles[b].x, particles[b].y);
+            ctx.stroke();
+          }
+        }
+      }
+
+      requestAnimationFrame(animate);
+    };
+
+    animate();
+  };
+
+  // Call the background visualization function
+  initBackground();
+
   // Animate elements on scroll
   const observerOptions = {
     threshold: 0.1,
