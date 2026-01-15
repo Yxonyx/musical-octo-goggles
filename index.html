@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description"
+        content="Fogadjokosan - A legjobb sportfogadási élmény. Sporthírek, e-sport, foci, tippek és a legjobb bukméker ajánlatok egy helyen.">
+    <meta name="keywords" content="sportfogadás, bukméker, sporthírek, e-sport, foci, tippek, odds">
+    <meta name="author" content="Fogadjokosan">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Fogadjokosan - Prémium Sportmagazin">
+    <meta property="og:description" content="Sporthírek, e-sport, foci és a legjobb bukméker ajánlatok.">
+    <meta property="og:site_name" content="Fogadjokosan">
+    <meta property="og:image" content="https://fogadjokosan.hu/consejo-negocio-apuestas-deportivas.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Fogadjokosan - Prémium Sportmagazin">
+    <meta name="twitter:description" content="Sporthírek, e-sport, foci és a legjobb bukméker ajánlatok.">
+    <meta name="twitter:image" content="https://fogadjokosan.hu/consejo-negocio-apuestas-deportivas.jpg">
+
+    <!-- iOS Meta -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#0B0B0B">
+
+    <title>Fogadjokosan - Prémium Sportmagazin & Bukméker Ajánló</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/png" href="logo.png">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-inner">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="Fogadjokosan" class="logo-icon"
+                    style="width: 40px; height: 40px; border-radius: 8px;">
+                <div class="logo-text">Fogadj<span>okosan</span></div>
+            </a>
+
+            <nav class="nav">
+                <a href="index.html" class="nav-link active">Főoldal</a>
+                <a href="pages/sporthirek.html" class="nav-link">Sporthírek</a>
+                <a href="#cikkek" class="nav-link">Cikkek</a>
+                <a href="pages/tippek.html" class="nav-link">Tippek</a>
+            </nav>
+
+            <div class="header-actions">
+                <button class="search-toggle" aria-label="Keresés">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8" />
+                        <path d="m21 21-4.35-4.35" />
+                    </svg>
+                </button>
+                <a href="pages/bukmekerek.html" class="btn btn-primary header-cta">Ajánlott irodák</a>
+                <button class="menu-toggle" aria-label="Menü">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav">
+        <a href="index.html" class="mobile-nav-link">Főoldal</a>
+        <a href="pages/sporthirek.html" class="mobile-nav-link">Sporthírek</a>
+        <a href="pages/tippek.html" class="mobile-nav-link">Tippek / Elemzések</a>
+        <a href="pages/bukmekerek.html" class="mobile-nav-link" style="color: var(--neon-green);">⚡ Ajánlott irodák</a>
+    </nav>
+
+    <!-- Search Modal -->
+    <div class="search-modal">
+        <button class="search-close" aria-label="Bezárás">✕</button>
+        <div class="search-modal-content">
+            <div class="search-input-wrapper">
+                <span class="search-icon">🔍</span>
+                <input type="search" class="search-input" placeholder="Keresés a cikkek között...">
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" style="position: relative; overflow: hidden;">
+        <!-- GIF háttér -->
+        <div style="position: absolute; inset: 0; z-index: 0;">
+            <img src="gifwallpaper.gif" alt="" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.7;">
+            <div
+                style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(11,11,11,0.3) 0%, rgba(11,11,11,0.6) 100%);">
+            </div>
+        </div>
+        <div class="container" style="position: relative; z-index: 1;">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <span>ÉLŐBEN | 2026</span>
+                    </div>
+                    <h1 class="hero-title">
+                        A legjobb <span>sportfogadási</span> élmény
+                    </h1>
+                    <p class="hero-description">
+                        Prémium sporthírek, e-sport tudósítások és szakértői tippek.
+                        Fedezd fel a legjobb bukmékereket és maximalizáld a nyereményedet.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="pages/bukmekerek.html" class="btn btn-primary">Ajánlott bukmékerek</a>
+                        <a href="pages/sporthirek.html" class="btn btn-outline">Legfrissebb hírek</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="dice-scene">
+                        <div class="dice-cube">
+                            <!-- Front : 1 -->
+                            <div class="dice-face front face-1">
+                                <div class="dice-face-inner">
+                                    <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                                    <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                                    <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                                </div>
+                            </div>
+                            <!-- Back : 6 -->
+                            <div class="dice-face back face-6">
+                                <div class="dice-face-inner">
+                                    <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                                    <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                                    <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                                </div>
+                            </div>
+                            <!-- Right : 2 -->
+                            <div class="dice-face right face-2">
+                                <div class="dice-face-inner">
+                                    <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                                    <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                                    <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                                </div>
+                            </div>
+                            <!-- Left : 5 -->
+                            <div class="dice-face left face-5">
+                                <div class="dice-face-inner">
+                                    <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                                    <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                                    <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                                </div>
+                            </div>
+                            <!-- Top : 3 -->
+                            <div class="dice-face top face-3">
+                                <div class="dice-face-inner">
+                                    <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                                    <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                                    <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                                </div>
+                            </div>
+                            <!-- Bottom : 4 -->
+                            <div class="dice-face bottom face-4">
+                                <div class="dice-face-inner">
+                                    <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                                    <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                                    <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Neon Hírszalag -->
+    <div
+        style="background: linear-gradient(90deg, rgba(0,255,136,0.1) 0%, rgba(0,255,136,0.05) 50%, rgba(0,255,136,0.1) 100%); border-top: 1px solid var(--neon-green); border-bottom: 1px solid var(--neon-green); overflow: hidden; padding: 0.75rem 0;">
+        <div class="ticker-scroll"
+            style="display: flex; animation: scroll-ticker 14s linear infinite; white-space: nowrap; will-change: transform; -webkit-transform: translateZ(0); transform: translateZ(0);">
+            <span
+                style="display: flex; gap: 3rem; padding: 0 1.5rem; color: var(--neon-green); font-weight: 600; font-size: 0.95rem;">
+                <span>🔥 ÚJ CIKK: Miért lesz csak kevés sportfogadó igazán sikeres? - Olvasd el most!</span>
+                <span>⚡ AI-alapú tipprendszer fejlesztés alatt - Hamarosan!</span>
+                <span>🏆 2026-os BL döntő közeleg - Készülj fel a legjobb oddsokkal!</span>
+                <span>💰 Exkluzív bónuszok az ajánlott bukmékereinknél</span>
+                <span>📊 Napi friss sportstatisztikák és elemzések</span>
+            </span>
+            <span
+                style="display: flex; gap: 3rem; padding: 0 1.5rem; color: var(--neon-green); font-weight: 600; font-size: 0.95rem;">
+                <span>🔥 ÚJ CIKK: Miért lesz csak kevés sportfogadó igazán sikeres? - Olvasd el most!</span>
+                <span>⚡ AI-alapú tipprendszer fejlesztés alatt - Hamarosan!</span>
+                <span>🏆 2026-os BL döntő közeleg - Készülj fel a legjobb oddsokkal!</span>
+                <span>💰 Exkluzív bónuszok az ajánlott bukmékereinknél</span>
+                <span>📊 Napi friss sportstatisztikák és elemzések</span>
+            </span>
+        </div>
+    </div>
+
+    <style>
+        @keyframes scroll-ticker {
+            0% {
+                -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+            }
+
+            100% {
+                -webkit-transform: translate3d(-50%, 0, 0);
+                transform: translate3d(-50%, 0, 0);
+            }
+        }
+
+        /* iOS: slower animation for better performance */
+        @supports (-webkit-touch-callout: none) {
+            .ticker-scroll {
+                animation-duration: 30s !important;
+            }
+        }
+
+        /* Reduced motion preference */
+        @media (prefers-reduced-motion: reduce) {
+            .ticker-scroll {
+                animation: none !important;
+            }
+        }
+    </style>
+
+    <!-- Casino Section -->
+    <section class="bookmakers-section" id="kaszinok">
+        <div class="container">
+            <h2 class="section-title">Kiemelt Fogadóirodák</h2>
+            <div class="bookmakers-grid">
+
+                <!-- 1. FatPirate -->
+                <div class="bookmaker-card" style="border: 2px solid #FFD700;">
+                    <span class="bookmaker-badge badge-top">⭐ Új</span>
+                    <div class="bookmaker-logo">
+                        <img src="fatpirate_casino_logo_360_6efeea39bf.png" alt="FatPirate Casino"
+                            style="max-height: 60px; width: auto;">
+                    </div>
+                    <h3 class="bookmaker-name">FatPirate</h3>
+                    <p class="bookmaker-desc">Kalózos kalandok és rengeteg bónusz vár! Prémium játékok és élő
+                        fogadás.</p>
+                    <div class="bookmaker-features">
+                        <span class="bookmaker-feature">Bónusz</span>
+                        <span class="bookmaker-feature">Élő</span>
+                        <span class="bookmaker-feature">Gyors</span>
+                    </div>
+                    <a href="https://my.trekyoubaby.com/click?pid=5233&offer_id=11225&l=1768323095" target="_blank"
+                        rel="noopener" class="btn btn-primary bookmaker-cta">Regisztráció →</a>
+                    <p class="bookmaker-affiliate">Partnerlink | 18+</p>
+                </div>
+
+                <!-- 2. Dragonia -->
+                <div class="bookmaker-card" style="border: 2px solid #9B59B6;">
+                    <span class="bookmaker-badge badge-popular">🔥 Népszerű</span>
+                    <div class="bookmaker-logo">
+                        <img src="dragonia.png" alt="Dragonia Casino" style="max-height: 60px; width: auto;">
+                    </div>
+                    <h3 class="bookmaker-name">Dragonia</h3>
+                    <p class="bookmaker-desc">Sárkányok birodalmában játszhatsz! Fantasy témájú exkluzív játékok.</p>
+                    <div class="bookmaker-features">
+                        <span class="bookmaker-feature">Fantasy</span>
+                        <span class="bookmaker-feature">Exkluzív</span>
+                        <span class="bookmaker-feature">VIP</span>
+                    </div>
+                    <a href="https://my.trekyoubaby.com/click?pid=5233&offer_id=11187&l=1768219840" target="_blank"
+                        rel="noopener" class="btn btn-primary bookmaker-cta">Regisztráció →</a>
+                    <p class="bookmaker-affiliate">Partnerlink | 18+</p>
+                </div>
+
+                <!-- 3. RoyalSea -->
+                <div class="bookmaker-card" style="border: 2px solid #3498DB;">
+                    <span class="bookmaker-badge badge-editor">👑 Király</span>
+                    <div class="bookmaker-logo">
+                        <img src="Képernyőkép_2025-12-02_135443-removebg-preview.png" alt="RoyalSea Casino"
+                            style="max-height: 60px; width: auto;">
+                    </div>
+                    <h3 class="bookmaker-name">RoyalSea</h3>
+                    <p class="bookmaker-desc">Királyi élmény a tengeren! Prémium játékok és exkluzív bónuszok.</p>
+                    <div class="bookmaker-features">
+                        <span class="bookmaker-feature">Prémium</span>
+                        <span class="bookmaker-feature">Bónusz</span>
+                        <span class="bookmaker-feature">24/7</span>
+                    </div>
+                    <a href="https://my.trekyoubaby.com/click?pid=5233&offer_id=11136" target="_blank" rel="noopener"
+                        class="btn btn-primary bookmaker-cta">Regisztráció →</a>
+                    <p class="bookmaker-affiliate">Partnerlink | 18+</p>
+                </div>
+
+                <!-- 4. Malina -->
+                <div class="bookmaker-card" style="border: 2px solid #E74C3C;">
+                    <span class="bookmaker-badge badge-fast">⚡ Gyors</span>
+                    <div class="bookmaker-logo">
+                        <img src="Képernyőkép_2025-12-03_173712-removebg-preview.png" alt="Malina Casino"
+                            style="max-height: 60px; width: auto;">
+                    </div>
+                    <h3 class="bookmaker-name">Malina</h3>
+                    <p class="bookmaker-desc">Friss és lédús nyeremények! Gyors kifizetés és hatalmas játékválaszték.
+                    </p>
+                    <div class="bookmaker-features">
+                        <span class="bookmaker-feature">Gyors</span>
+                        <span class="bookmaker-feature">Slots</span>
+                        <span class="bookmaker-feature">Mobile</span>
+                    </div>
+                    <a href="https://my.trekyoubaby.com/click?pid=5233&offer_id=10830&l=1764760753" target="_blank"
+                        rel="noopener" class="btn btn-primary bookmaker-cta">Regisztráció →</a>
+                    <p class="bookmaker-affiliate">Partnerlink | 18+</p>
+                </div>
+
+                <!-- 5. Pistolo -->
+                <div class="bookmaker-card" style="border: 2px solid #F39C12;">
+                    <div class="bookmaker-logo">
+                        <img src="Copy-of-Pistolo.svg" alt="Pistolo Casino" style="max-height: 60px; width: auto;">
+                    </div>
+                    <h3 class="bookmaker-name">Pistolo</h3>
+                    <p class="bookmaker-desc">Vadnyugati kalandok és aranyláz! Izgalmas nyerőgépek és asztali játékok.
+                    </p>
+                    <div class="bookmaker-features">
+                        <span class="bookmaker-feature">Western</span>
+                        <span class="bookmaker-feature">Jackpot</span>
+                        <span class="bookmaker-feature">Live</span>
+                    </div>
+                    <a href="https://my.trekyoubaby.com/click?pid=5233&offer_id=10829&l=1764760490" target="_blank"
+                        rel="noopener" class="btn btn-primary bookmaker-cta">Regisztráció →</a>
+                    <p class="bookmaker-affiliate">Partnerlink | 18+</p>
+                </div>
+
+                <!-- 6. Frumzi -->
+                <div class="bookmaker-card" style="border: 2px solid #1ABC9C;">
+                    <span class="bookmaker-badge badge-top">🎁 Bónusz</span>
+                    <div class="bookmaker-logo">
+                        <img src="frumzi-logo.png" alt="Frumzi Casino" style="max-height: 60px; width: auto;">
+                    </div>
+                    <h3 class="bookmaker-name">Frumzi</h3>
+                    <p class="bookmaker-desc">Friss élmények minden nap! Hatalmas üdvözlő bónusz és ingyenes pörgetések.
+                    </p>
+                    <div class="bookmaker-features">
+                        <span class="bookmaker-feature">Bónusz</span>
+                        <span class="bookmaker-feature">Free spin</span>
+                        <span class="bookmaker-feature">Új</span>
+                    </div>
+                    <a href="https://trackprolink.com/click?o=2379&a=2249" target="_blank" rel="noopener"
+                        class="btn btn-primary bookmaker-cta">Regisztráció →</a>
+                    <p class="bookmaker-affiliate">Partnerlink | 18+</p>
+                </div>
+
+                <!-- 7. Betmatch -->
+                <div class="bookmaker-card" style="border: 2px solid #2ECC71;">
+                    <div class="bookmaker-logo">
+                        <img src="betmatch-logo.png" alt="Betmatch Casino" style="max-height: 60px; width: auto;">
+                    </div>
+                    <h3 class="bookmaker-name">Betmatch</h3>
+                    <p class="bookmaker-desc">Sportfogadás és játékok egy helyen! Crypto barát platform gyors
+                        tranzakciókkal.</p>
+                    <div class="bookmaker-features">
+                        <span class="bookmaker-feature">Crypto</span>
+                        <span class="bookmaker-feature">Sport</span>
+                        <span class="bookmaker-feature">Gyors</span>
+                    </div>
+                    <a href="https://trackprolink.com/click?o=2151&a=2249&link_id=10753" target="_blank" rel="noopener"
+                        class="btn btn-primary bookmaker-cta">Regisztráció →</a>
+                    <p class="bookmaker-affiliate">Partnerlink | 18+</p>
+                </div>
+
+            </div>
+
+            <div class="text-center mt-3">
+                <a href="pages/bukmekerek.html" class="btn btn-outline">Összes iroda megtekintése →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Articles -->
+    <section class="articles-section" id="cikkek">
+        <div class="container">
+            <h2 class="section-title">Népszerű Cikkek</h2>
+            <div class="articles-grid featured">
+
+                <!-- Featured Article - AI Sportfogadás -->
+                <article class="article-card featured">
+                    <a href="pages/ai-sportfogadas.html" class="article-image">
+                        <span class="article-category">AI & Stratégia</span>
+                        <div
+                            style="width: 100%; height: 100%; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); display: flex; align-items: center; justify-content: center; font-size: 4rem;">
+                            🤖</div>
+                    </a>
+                    <div class="article-content" style="padding: 1.5rem;">
+                        <div class="article-meta">
+                            <span>Kiemelt cikk</span>
+                            <span>•</span>
+                            <span>8 perc olvasás</span>
+                        </div>
+                        <h3 class="article-title">AI és Mesterséges Intelligencia a Sportfogadásban</h3>
+                        <p class="article-excerpt">Hogyan változtatják meg az AI algoritmusok a sportfogadás világát?
+                            Ismerj meg modern stratégiákat és tippeket.</p>
+                    </div>
+                </article>
+
+                <!-- Side Articles -->
+                <div>
+                    <article class="article-card" style="margin-bottom: 1rem;">
+                        <a href="pages/fogadoiroda-valasztas.html" class="article-image">
+                            <span class="article-category">Útmutató</span>
+                            <div
+                                style="width: 100%; height: 100%; background: linear-gradient(135deg, #0f3460 0%, #16213e 100%); display: flex; align-items: center; justify-content: center; font-size: 2.5rem;">
+                                📋</div>
+                        </a>
+                        <div class="article-content" style="padding: 1rem;">
+                            <div class="article-meta">
+                                <span>Útmutató</span>
+                            </div>
+                            <h3 class="article-title">Hogyan válasszunk fogadóirodát?</h3>
+                        </div>
+                    </article>
+
+                    <article class="article-card">
+                        <a href="pages/miert-sikeres-kevesen.html" class="article-image">
+                            <span class="article-category">Elemzés</span>
+                            <div
+                                style="width: 100%; height: 100%; background: linear-gradient(135deg, #1a1a2e 0%, #e94560 50%, #1a1a2e 100%); display: flex; align-items: center; justify-content: center; font-size: 2.5rem;">
+                                📈</div>
+                        </a>
+                        <div class="article-content" style="padding: 1rem;">
+                            <div class="article-meta">
+                                <span>Elemzés</span>
+                            </div>
+                            <h3 class="article-title">Miért sikeres csak kevesen a fogadásban?</h3>
+                        </div>
+                    </article>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Popular Section with Sidebar -->
+    <section class="articles-section" id="cikkek">
+        <div class="container">
+            <div class="content-with-sidebar">
+                <div>
+                    <h2 class="section-title">Népszerű Cikkek</h2>
+                    <div class="articles-grid" id="popular-articles-grid"
+                        style="grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));">
+
+                        <!-- ÚJ! Miért sikeres kevés fogadó cikk -->
+                        <article class="article-card"
+                            style="border: 1px solid #FFD700; box-shadow: 0 0 20px rgba(255,215,0,0.2);">
+                            <a href="pages/miert-sikeres-kevesen.html" class="article-image"
+                                style="display: block; aspect-ratio: 16/10; overflow: hidden; position: relative;">
+                                <span class="article-category"
+                                    style="background: #FFD700; color: #0B0B0B; position: absolute; top: 12px; left: 12px; padding: 4px 12px; border-radius: 50px; font-size: 0.75rem; font-weight: 700; z-index: 10;">🧠
+                                    Pszichológia</span>
+                                <img src="consejo-negocio-apuestas-deportivas.jpg"
+                                    alt="Miért sikeres kevés sportfogadó?"
+                                    style="width: 100%; height: 100%; object-fit: cover;">
+                            </a>
+                            <div class="article-content" style="display: block; padding: 1rem;">
+                                <div class="article-meta"
+                                    style="display: flex; gap: 8px; font-size: 0.8rem; color: #888; margin-bottom: 8px;">
+                                    <span style="color: #FFD700;">🔥 Új</span>
+                                    <span>•</span>
+                                    <span>2026. jan. 14.</span>
+                                </div>
+                                <h3 class="article-title"
+                                    style="font-size: 1.1rem; font-weight: 700; color: #fff; line-height: 1.4; margin: 0;">
+                                    Miért lesz csak kevés sportfogadó igazán sikeres?</h3>
+                            </div>
+                        </article>
+
+                        <!-- 2. Fogadóiroda választás cikk - 170 olvasás -->
+                        <article class="article-card"
+                            style="border: 1px solid var(--neon-green); box-shadow: 0 0 20px rgba(0,255,136,0.2);">
+                            <a href="pages/fogadoiroda-valasztas.html" class="article-image"
+                                style="display: block; aspect-ratio: 16/10; overflow: hidden; position: relative; background: linear-gradient(135deg, #1a1a2e 0%, #0B0B0B 100%);">
+                                <span class="article-category"
+                                    style="background: var(--neon-green); color: #0B0B0B; position: absolute; top: 12px; left: 12px; padding: 4px 12px; border-radius: 50px; font-size: 0.75rem; font-weight: 700; z-index: 10;">⚖️
+                                    Útmutató</span>
+                                <div
+                                    style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 4rem;">
+                                    ⚖️</div>
+                            </a>
+                            <div class="article-content" style="display: block; padding: 1rem;">
+                                <div class="article-meta"
+                                    style="display: flex; gap: 8px; font-size: 0.8rem; color: #888; margin-bottom: 8px;">
+                                    <span style="color: #39FF14;">⭐ Kiemelt</span>
+                                    <span>•</span>
+                                    <span>170 olvasás</span>
+                                </div>
+                                <h3 class="article-title"
+                                    style="font-size: 1.1rem; font-weight: 700; color: #fff; line-height: 1.4; margin: 0;">
+                                    Mitől jó egy fogadóiroda – és miért érdemes az új szereplőkre is figyelni?</h3>
+                            </div>
+                        </article>
+
+                        <!-- 2. AI Sportfogadás cikk - 133 olvasás -->
+                        <article class="article-card"
+                            style="border: 1px solid var(--neon-green); box-shadow: 0 0 20px rgba(0,255,136,0.2);">
+                            <a href="pages/ai-sportfogadas.html" class="article-image"
+                                style="display: block; aspect-ratio: 16/10; overflow: hidden; position: relative;">
+                                <span class="article-category"
+                                    style="background: var(--neon-green); color: #0B0B0B; position: absolute; top: 12px; left: 12px; padding: 4px 12px; border-radius: 50px; font-size: 0.75rem; font-weight: 700; z-index: 10;">🤖
+                                    AI &
+                                    Stratégia</span>
+                                <img src="images/ai-sportfogadas.png" alt="AI Sportfogadás"
+                                    style="width: 100%; height: 100%; object-fit: cover;">
+                            </a>
+                            <div class="article-content" style="display: block; padding: 1rem;">
+                                <div class="article-meta"
+                                    style="display: flex; gap: 8px; font-size: 0.8rem; color: #888; margin-bottom: 8px;">
+                                    <span style="color: #39FF14;">⭐ Kiemelt</span>
+                                    <span>•</span>
+                                    <span>133 olvasás</span>
+                                </div>
+                                <h3 class="article-title"
+                                    style="font-size: 1.1rem; font-weight: 700; color: #fff; line-height: 1.4; margin: 0;">
+                                    Okos sportfogadás és AI: Stratégiák, kockázatok és a jövő</h3>
+                            </div>
+                        </article>
+
+
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <div class="sidebar-widget sidebar-bookmaker">
+                        <h4 class="sidebar-title">🔥 Kiemelt ajánlat</h4>
+                        <div class="sidebar-bookmaker-logo">
+                            <img src="dragonia.png" alt="Dragonia Casino" style="max-height: 50px; width: auto;">
+                        </div>
+                        <p class="sidebar-bookmaker-text">Sárkányok birodalmában játszhatsz! Fantasy exkluzív játékok!
+                        </p>
+                        <a href="https://my.trekyoubaby.com/click?pid=5233&offer_id=11187&l=1768219840" target="_blank"
+                            rel="noopener" class="btn btn-primary" style="width: 100%;">Regisztráció →</a>
+                        <p class="bookmaker-affiliate" style="margin-top: 0.5rem;">Partnerlink | 18+</p>
+                    </div>
+
+                    <div class="sidebar-widget" id="sidebar-popular">
+                        <h4 class="sidebar-title">📌 Legnépszerűbb</h4>
+                        <a href="pages/miert-sikeres-kevesen.html" class="popular-article">
+                            <div class="popular-article-image">
+                                <img src="consejo-negocio-apuestas-deportivas.jpg" alt="Sportfogadás siker"
+                                    style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                            </div>
+                            <div>
+                                <h5 class="popular-article-title">Miért lesz csak kevés sportfogadó igazán sikeres?</h5>
+                            </div>
+                        </a>
+                        <a href="pages/ai-sportfogadas.html" class="popular-article">
+                            <div class="popular-article-image">
+                                <img src="images/ai-sportfogadas.png" alt="AI sportfogadás"
+                                    style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                            </div>
+                            <div>
+                                <h5 class="popular-article-title">Okos sportfogadás: AI és adatelemzés</h5>
+                            </div>
+                        </a>
+                        <a href="pages/fogadoiroda-valasztas.html" class="popular-article">
+                            <div class="popular-article-image">
+                                <div
+                                    style="width: 100%; height: 100%; background: linear-gradient(135deg, #00ff88 0%, #1a4720 100%); display: flex; align-items: center; justify-content: center; border-radius: 8px; font-size: 1.5rem;">
+                                    🏆</div>
+                            </div>
+                            <div>
+                                <h5 class="popular-article-title">Mitől jó egy fogadóiroda?</h5>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="sidebar-widget">
+                        <h4 class="sidebar-title">🏷️ Népszerű címkék</h4>
+                        <div class="tags">
+                            <a href="pages/cimke.html" class="tag">BL</a>
+                            <a href="pages/cimke.html" class="tag">Premier League</a>
+                            <a href="pages/cimke.html" class="tag">CS2</a>
+                            <a href="pages/cimke.html" class="tag">Valorant</a>
+                            <a href="pages/cimke.html" class="tag">NBA</a>
+                            <a href="pages/cimke.html" class="tag">F1</a>
+                            <a href="pages/cimke.html" class="tag">Tippek</a>
+                            <a href="pages/cimke.html" class="tag">Bónusz</a>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="logo.png" alt="Fogadjokosan" style="width: 32px; height: 32px; border-radius: 6px;">
+                        <span>Fogadj<span style="color: var(--neon-green);">okosan</span></span>
+                    </div>
+                    <p class="footer-description">
+                        Prémium sportmagazin és bukméker ajánló portál. Naprakész hírek, szakértői elemzések és a
+                        legjobb fogadási lehetőségek.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="footer-column-title">Hírek</h4>
+                    <div class="footer-links">
+                        <a href="pages/sporthirek.html">Sporthírek</a>
+                        <a href="pages/tippek.html">Tippek</a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="footer-column-title">Bukmékerek</h4>
+                    <div class="footer-links">
+                        <a href="pages/bukmekerek.html">Összes iroda</a>
+                        <a href="pages/bukmekerek.html#top">Top ajánlatok</a>
+                        <a href="pages/bukmekerek.html#crypto">Crypto fogadás</a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="footer-column-title">Jogi</h4>
+                    <div class="footer-links">
+                        <a href="pages/aszf.html">ÁSZF</a>
+                        <a href="pages/adatvedelem.html">Adatvédelem</a>
+                        <a href="pages/impresszum.html">Impresszum</a>
+                        <a href="pages/cookie-policy.html">Cookie szabályzat</a>
+                        <a href="pages/allasok.html">Állások</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2026 Fogadjokosan. Minden jog fenntartva.</p>
+                <p class="footer-disclaimer">
+                    A sportfogadás 18 éven felülieknek szól. Felelősségteljes játék! Az oldalon partnerlinket tartalmazó
+                    ajánlatok szerepelnek.
+                    A szerencsejáték függőséget okozhat. Segítség: <a href="tel:+3617654321">+36 1 765 4321</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/rss-feeds.js"></script>
+</body>
+
+</html>
